@@ -9,7 +9,7 @@ function Product(props) {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{desc}</Card.Text>
-        <Card.Title>{price}</Card.Title>
+        <Card.Title>&#8377;{price}</Card.Title>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>

@@ -30,7 +30,7 @@ function Header() {
                 </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link className="nav-link" to="/new">
+                <Link className="nav-link" to="/products/new">
                   New
                 </Link>
               </Nav.Link>
