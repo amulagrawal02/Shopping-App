@@ -15,9 +15,13 @@ mongoose
 // seedDB(); /* run this file only one time  */
 app.use(express.json());
 
+// for all routes
+const productRoutes = require("./routes/productRouter");
+
 app.get("/hello", (req, res) => {
   res.status(200).send("hello from server");
 });
+app.use(productRoutes);
 
 app.listen(3003, () => {
   console.log("server start at server 3003");
