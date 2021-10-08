@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import New from "./components/New";
+import Show from "./components/Show";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/products" component={ProductList}></Route>
             <Route exact path="/products/new" component={New}></Route>
+            <Route exact path="/products/:id" component={Show}></Route>
           </Switch>
         </Container>
       </div>

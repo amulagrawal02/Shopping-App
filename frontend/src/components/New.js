@@ -1,12 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import { useState } from "react";
 import axios from "axios";
 
 function New() {
+  const history = useHistory();
   const [data, updateData] = useState({
     name: "",
-    img: "",
+    src: "",
     price: "",
     desc: "",
   });
@@ -14,7 +16,7 @@ function New() {
   const submitHandler = async (e) => {
     e.preventDefault();
     await axios.post("/products", data);
-    console.log("product added successfully!");
+    history.push("/products");
   };
 
   return (
@@ -40,9 +42,9 @@ function New() {
               <Form.Control
                 type="text"
                 placeholder="Image Url"
-                name="img"
+                name="src"
                 onChange={(e) => {
-                  updateData({ ...data, img: e.target.value });
+                  updateData({ ...data, src: e.target.value });
                 }}
               />
             </Form.Group>

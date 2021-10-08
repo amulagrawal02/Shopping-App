@@ -1,8 +1,10 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Product(props) {
-  const { name, src, price, desc } = props.product;
+  // console.log(props.product);
+  const { _id, name, src, price, desc } = props.product;
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" src={src} />
@@ -10,7 +12,9 @@ function Product(props) {
         <Card.Title>{name}</Card.Title>
         <Card.Text>{desc}</Card.Text>
         <Card.Title>&#8377;{price}</Card.Title>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">
+          <Link to={`/products/${_id}`}>Buy Now</Link>
+        </Button>
       </Card.Body>
     </Card>
   );

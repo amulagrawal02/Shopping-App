@@ -13,7 +13,11 @@ router.get("/products", async (req, res) => {
 
 router.post("/products", async (req, res) => {
   const product = await Product.create(req.body);
+  return res.json(product);
+});
 
+router.get("/products/:id", async (req, res) => {
+  const product = await Product.findById(req.params.id);
   return res.json(product);
 });
 
