@@ -6,6 +6,7 @@ import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import New from "./components/New";
 import Show from "./components/Show";
+import Edit from "./components/Edit";
 
 class App extends Component {
   render() {
@@ -17,6 +18,8 @@ class App extends Component {
             <Route exact path="/products" component={ProductList}></Route>
             <Route exact path="/products/new" component={New}></Route>
             <Route exact path="/products/:id" component={Show}></Route>
+            <Route exact path="/products/:id/edit" component={Edit}></Route>
+
           </Switch>
         </Container>
       </div>

@@ -21,4 +21,9 @@ router.get("/products/:id", async (req, res) => {
   return res.json(product);
 });
 
+router.patch("/products/:id", async (req, res) => {
+  const product = await Product.findByIdAndUpdate(req.params.id, req.body);
+  return res.json(product);
+});
+
 module.exports = router;
