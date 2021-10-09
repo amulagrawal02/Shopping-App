@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Row, Card, Button } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 
 function Show() {
   const [data, updatedData] = useState({
@@ -10,6 +10,8 @@ function Show() {
     desc: "",
     price: "",
   });
+
+  const history = useHistory();
 
   //   to get the params of the url
   let params = useParams();
@@ -27,7 +29,12 @@ function Show() {
       });
     }
     fetchData();
-  });
+  }, [params]);
+
+  const deleteHandler = async () => {
+    await axios.delete(`/products/${params}`);
+    return history.push("/products");
+  };
 
   return (
     <Row>
@@ -47,8 +54,12 @@ function Show() {
             <Button variant="info" className="me-2 mb-2">
               <Link to={`/products/${params}/edit`}>Edit</Link>
             </Button>
-            <Button variant="danger" className="me-2 mb-2">
-              <Link to={`/products/`}>Delete</Link>
+            <Button
+              variant="danger"
+              className="me-2 mb-2"
+              onClick={deleteHandler}
+            >
+              Delete
             </Button>
           </Card.Body>
         </Card>

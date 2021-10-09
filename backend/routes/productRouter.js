@@ -21,9 +21,19 @@ router.get("/products/:id", async (req, res) => {
   return res.json(product);
 });
 
+// to edit the products data
 router.patch("/products/:id", async (req, res) => {
   const product = await Product.findByIdAndUpdate(req.params.id, req.body);
   return res.json(product);
+});
+
+// to delete the product
+
+router.delete("/products/:id", async (req, res) => {
+  console.log(req.params.id);
+  await Product.findByIdAndDelete(req.params.id);
+
+  return res.json("deleted");
 });
 
 module.exports = router;
