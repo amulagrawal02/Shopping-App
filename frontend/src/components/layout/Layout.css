@@ -1,0 +1,11 @@
+.main-container {
+  margin-top: 100px;
+}
+.btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn a:hover {
+  color: white;
+}
