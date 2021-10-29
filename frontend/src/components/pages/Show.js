@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Col, Row, Card, Button } from "react-bootstrap";
+import { Col, Row, Card, Button, Form } from "react-bootstrap";
 import { Link, useParams, useHistory } from "react-router-dom";
 
 function Show() {
@@ -66,6 +66,16 @@ function Show() {
       </Col>
       <Col lg={6} md={12}>
         <h1>Leave A review</h1>
+        <Form>
+          <Form.Group className="mb-3">
+            <Form.Label>Name</Form.Label>
+            <Form.Control type="range" min="1" max="5" name="rating" />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Description of Product</Form.Label>
+            <Form.Control as="textarea" rows={3} name="review" />
+          </Form.Group>
+        </Form>
       </Col>
     </Row>
   );
