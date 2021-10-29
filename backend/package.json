@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev" : "nodemon ./app.js"
+    "dev": "nodemon ./app.js"
   },
   "author": "Amul Agrawal",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "mongoose": "^6.0.9",
     "nodemon": "^2.0.13"
